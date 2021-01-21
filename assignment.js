@@ -1,3 +1,6 @@
+// https://github.com/hasansiam45/assignment.js
+
+
 //1. kiloMeterToMeter function
 function kilometerToMeter(kilometer) {
     return kilometer * 1000;
