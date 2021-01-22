@@ -3,7 +3,7 @@
 
 //1. kiloMeterToMeter function
 function kilometerToMeter(kilometer) {
-    if (kilometer <= 0 || typeof kilometer == "string") {
+    if (kilometer <= 0 || typeof kilometer == "string" || typeof kilometer == "boolean" || typeof kilometer == "object") {
         return "Expected a positive value"
     } else {
         return kilometer * 1000;
@@ -58,17 +58,16 @@ function hotelCost(day) {
 // 4. megaFriend function
 function megaFriend(arr) {
     var longestWord = "";
-    for (var i = 0; i < arr.length; i++){
+    for (var i = 0; i < arr.length; i++) {
         if (typeof arr[i] !== "string") {
             return "This array can only contain strings"
         }
     }
-     for (var i = 0; i < arr.length; i++) {
-         if (longestWord.length < arr[i].length) {
-             longestWord = arr[i];
-         }
-     }
-     return longestWord;
+    for (var i = 0; i < arr.length; i++) {
+        if (longestWord.length < arr[i].length) {
+            longestWord = arr[i];
+        }
+    }
+    return longestWord;
 
 }
-
