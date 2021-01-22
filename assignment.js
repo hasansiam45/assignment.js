@@ -3,25 +3,39 @@
 
 //1. kiloMeterToMeter function
 function kilometerToMeter(kilometer) {
-    return kilometer * 1000;
+    if (kilometer <= 0 || typeof kilometer == "string") {
+        return "Expected a positive value"
+    } else {
+        return kilometer * 1000;
+    }
+
 }
+
 
 
 
 //2. budgetCalculator function
 function budgetCalculator(watch, phone, laptop) {
-    var watchPrice = watch * 50;
-    var phonePrice = phone * 100;
-    var laptopPrice = laptop * 500;
-    var total = watchPrice + phonePrice + laptopPrice;
-    return total;
+    if (typeof watch == "string" || typeof phone == "string" || typeof laptop == "string" || watch < 0 || phone < 0 || laptop < 0) {
+        return "Expected a positive value"
+    } else {
+        var watchPrice = watch * 50;
+        var phonePrice = phone * 100;
+        var laptopPrice = laptop * 500;
+        var total = watchPrice + phonePrice + laptopPrice;
+        return total;
+    }
 }
+
+
 
 
 // 3. hotelCost function
 function hotelCost(day) {
     var totalCost = 0;
-    if (day <= 10) {
+    if (day < 0 || typeof day == "string") {
+        return "please Enter a valid amount of day";
+    } else if (day <= 10) {
         totalCost = day * 100;
     } else if (day <= 20) {
         var firstPartCost = 10 * 100;
@@ -39,14 +53,21 @@ function hotelCost(day) {
 }
 
 
+
+
 // 4. megaFriend function
 function megaFriend(arr) {
-
     var longestWord = "";
-    for (var i = 0; i < arr.length; i++) {
-        if (longestWord.length < arr[i].length) {
-            longestWord = arr[i];
+    for (var i = 0; i < arr.length; i++){
+        if (typeof arr[i] !== "string") {
+            return "This array can only contain strings"
         }
     }
-    return longestWord;
+     for (var i = 0; i < arr.length; i++) {
+         if (longestWord.length < arr[i].length) {
+             longestWord = arr[i];
+         }
+     }
+     return longestWord;
+
 }
