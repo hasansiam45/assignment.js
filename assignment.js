@@ -33,7 +33,7 @@ function budgetCalculator(watch, phone, laptop) {
 // 3. hotelCost function
 function hotelCost(day) {
     var totalCost = 0;
-    if (day < 0 || typeof day == "string") {
+    if (day < 0 || typeof day == "string" || typeof day == "boolean" || typeof day == "object") {
         return "please Enter a valid amount of day";
     } else if (day <= 10) {
         totalCost = day * 100;
@@ -51,6 +51,7 @@ function hotelCost(day) {
     }
     return totalCost;
 }
+
 
 
 
